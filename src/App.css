@@ -98,7 +98,6 @@ button{
   display: flex;
   height: 100vh;
   margin: 0% 10%;
-  padding-top: 2%;
   align-items: center;
   justify-content: space-between;
   overflow-x:hidden ;
@@ -107,6 +106,9 @@ button{
 .home-content{
   width: 50%;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 .home-title{
   font-family: 'Playfair Display', serif;
@@ -407,7 +409,90 @@ button{
 
     @media screen and (max-width:640px) {
       .shop-main{
-        grid-template-columns: repeat(1,1fr);
+        grid-template-columns: repeat(2,1fr);
+        width: 96%;
+        margin: 0 2%;
       }
-      
+      .shop-filter{
+        display: none;
+      }
+      .shop-head{
+        width: 90%;
+        padding: 0 5%;
+        margin-top: 70px;
+      }
+      .shop-head > h1{
+        font-size: 24px;
+      }
+      .shop-head > p{
+        font-size: 12px;
+      }
+
+
+
+      .navbar-container{
+        width: 96%;
+        margin: 2%;
+      }
+      .fullNavbar{
+        font-size: 10px;
+      }
+
+      .product-container{
+        border: 2px solid;
+        border-radius: 20px;
+        text-align: center;
+        position: relative;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        overflow: hidden;
+      }
+      .home-container{
+        width: 92%;
+        margin: 0 4%;
+      }
+      .home-content{
+        width: 100%;
+        text-align: left;
+      }
+      .home-title{
+        font-size: 64px;
+      }
+      .home-container > .home-hero{
+        transform: rotate(-20deg);
+        position: relative;
+        right: 110%;
+        background-color: transparent;
+        z-index: -1;
+        opacity: 0.2;
+      }
+      .home-hero>img{
+        width: 600px;
+      }
+
+
+/* ////About  */
+
+.about-trending{
+  gap: 2%;
+  padding-top: 5%;
+  overflow-x: scroll;
+}
+.about-prod{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+}
+.about-gal{
+  overflow-x: scroll;
+}
+.about-gal > img{
+  height: 50%;
+  width: 50%;
+}
+.about-head{
+  font-size: 20px;
+}
     }
