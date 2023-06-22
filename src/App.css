@@ -393,3 +393,21 @@ button{
       width: 90%;
     }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+    @media screen and (max-width:640px) {
+      .shop-main{
+        grid-template-columns: repeat(1,1fr);
+      }
+      
+    }
