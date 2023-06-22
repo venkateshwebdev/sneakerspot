@@ -7,7 +7,7 @@ const Shop = () => {
         getData()
     },[])
     const getData = async()=>{
-        const rawData = await fetch("http://localhost:8000")
+        const rawData = await fetch("https://sneakerspotapi.onrender.com")
         const resData = await rawData.json()
         setData(resData.data)
         console.log(resData)

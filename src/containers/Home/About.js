@@ -10,7 +10,7 @@ const About = () => {
         getData()
     },[])
     const getData = async()=>{
-        const rawData = await fetch("http://localhost:8000/getabout")
+        const rawData = await fetch("https://sneakerspotapi.onrender.com/getabout")
         const resData = await rawData.json()
         console.log(resData)
         setData(resData)
