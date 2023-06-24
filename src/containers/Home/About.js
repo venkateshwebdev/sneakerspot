@@ -16,7 +16,7 @@ const About = () => {
         setData(resData)
     }
     useEffect(()=>{
-        Aos.init({duration:2000,easing:"ease-in-out"})
+        Aos.init({duration:2000,easing:"ease"})
     },[])
     console.log("I am rendered")
     return ( 
@@ -24,10 +24,10 @@ const About = () => {
                         <div>
                 <div className="about-head">Top Brands For You</div>
                 <div className="about-trending" >
-                    <img src={"https://images-cs.stockx.com/v3/assets/blt818b0c67cf450811/blt7486bb7a2357dbbe/646ceae3a15c658a033d29d3/nikemay.jpg?quality=80&auto=webp&format=pjpg&dpr=1&width=234&height=160"}/>
-                    <img src={"https://images-cs.stockx.com/v3/assets/blt818b0c67cf450811/blt75bf3b15c3aae08c/646ceaf3c9c6e238e3299f15/adidasmay.jpg?quality=80&auto=webp&format=pjpg&dpr=1&width=234&height=160"}/>
-                    <img src={"https://images-cs.stockx.com/v3/assets/blt818b0c67cf450811/blt4fa8028e057af36f/646ceb0112041606a87c765c/newbalancemay.jpg?quality=80&auto=webp&format=pjpg&dpr=1&width=234&height=160"}/>
-                    <img src={"https://images-cs.stockx.com/v3/assets/blt818b0c67cf450811/bltf85fa11097f37b9b/646cea61a15c6524883d29c9/crocsmay.jpg?quality=80&auto=webp&format=pjpg&dpr=1&width=234&height=160"}/>
+                    <img  src={"https://images-cs.stockx.com/v3/assets/blt818b0c67cf450811/blt7486bb7a2357dbbe/646ceae3a15c658a033d29d3/nikemay.jpg?quality=80&auto=webp&format=pjpg&dpr=1&width=234&height=160"}/>
+                    <img  src={"https://images-cs.stockx.com/v3/assets/blt818b0c67cf450811/blt75bf3b15c3aae08c/646ceaf3c9c6e238e3299f15/adidasmay.jpg?quality=80&auto=webp&format=pjpg&dpr=1&width=234&height=160"}/>
+                    <img  src={"https://images-cs.stockx.com/v3/assets/blt818b0c67cf450811/blt4fa8028e057af36f/646ceb0112041606a87c765c/newbalancemay.jpg?quality=80&auto=webp&format=pjpg&dpr=1&width=234&height=160"}/>
+                    <img  src={"https://images-cs.stockx.com/v3/assets/blt818b0c67cf450811/bltf85fa11097f37b9b/646cea61a15c6524883d29c9/crocsmay.jpg?quality=80&auto=webp&format=pjpg&dpr=1&width=234&height=160"}/>
             </div>
             </div>
 
@@ -47,7 +47,7 @@ const About = () => {
                 <div className="about-head ">Trending</div>
                 <div className="about-trending about-prod" >
                 {
-                    data?.data.trend.map((e,i)=><ProductCard key={i} home={true} price={e.price} image={e.images?.[1]?e.images[1]:e.images?.[0]}/>)
+                    data?.data.trend.map((e,i)=><ProductCard key={i} home={true} id={e._id} price={e.price} image={e.images?.[1]?e.images[1]:e.images?.[0]}/>)
                 }
             </div>
             </div>

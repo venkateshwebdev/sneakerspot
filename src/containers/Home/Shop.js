@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import ProductCard from "../../components/ProductCard";
+import { Link } from "react-router-dom";
 
 const Shop = () => {
     const [data,setData] = useState()
@@ -21,13 +22,13 @@ const Shop = () => {
             </div>
             <div className="shop-body">
             <div className="shop-filter">
-                {
-                    [...Array(15)].map((e)=><p>Dummy text</p>)
-                }
+                <p>Nike</p>
+                <p>Puma</p>
+                <p>Adidas</p>
             </div>
             <div className="shop-main">
                 {
-                data?.map((e,i)=><ProductCard key={i} image={e.images?.[1]} title={e.title} price={e.price}/>)
+                data?.map((e,i)=><ProductCard key={i} id={e._id} image={e.images?.[1]} title={e.title} price={e.price}/>)
                 }
             </div>
             </div>

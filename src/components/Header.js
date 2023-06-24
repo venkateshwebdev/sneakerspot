@@ -3,9 +3,12 @@ import { useContext,useState,useEffect } from "react";
 import {GiHamburgerMenu} from "react-icons/gi"
 import "aos/dist/aos.css"
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { addItem,removeItem } from "../store/cartSlice";
 const Navbar = () => {
     const [width, setWidth] = useState(false);
     const [scrollY, setScrollY] = useState(0);
+    const count = useSelector(state => state.cart.productList)
     useEffect(() => {
         const handleScroll = () => {
           const currentScrollY = window.scrollY;
@@ -22,9 +25,7 @@ const Navbar = () => {
     
         return () => window.removeEventListener('scroll', handleScroll);
       }, []);
-      useEffect(()=>{
-        Aos.init({duration:4000})
-      })
+      // console.log(count)
     return(
         <div className={`navbar-container`}>
             {
@@ -33,11 +34,11 @@ const Navbar = () => {
                 <div className="navbar-logo logo">SS</div>
                 <div className="navbar-logo"><Link to="/">SneakerSpot</Link></div>
                 </div>
-                <div data-aos="fade" style={{display:"flex",justifyContent:"space-between",gap:"20px"}}>
+                <div style={{display:"flex",justifyContent:"space-between",gap:"20px"}}>
                 <Link to="/">Home</Link>
-                <Link to="login">Login</Link>
                 <Link to="shop">Shop</Link>
-                <Link to="cart">Cart</Link>
+                <Link className="cart" to="cart">Cart {count.length}</Link>
+                <Link  to="login">Login</Link>
                 </div>
 
             </div>
