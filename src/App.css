@@ -406,6 +406,7 @@ button{
 }
 .account-ele > button{
   border-radius: 10px;
+  flex:1;
 }
 
 
@@ -660,6 +661,13 @@ button{
 }
 .cart-product:hover{
   background-color: rgba(211, 211, 211, 0.279);
+}
+.imgdiv{
+  height: 150px;
+  width:150px;
+  aspect-ratio: 3/2;
+  object-fit: contain;
+  mix-blend-mode: color-burn;
 }
     
 .login-card{
