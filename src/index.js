@@ -8,6 +8,7 @@ import Shop from './containers/Home/Shop';
 import Cart from './containers/Home/Cart';
 import Login from './containers/Home/Login';
 import Product from './containers/Home/ProductPage';
+import Account from './containers/Home/Account';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const router = createBrowserRouter([
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path:"product/:id",
         element:<Product />
+      },
+      {
+        path:"account",
+        element:<Account />
       }
     ]
   }

@@ -13,7 +13,7 @@ const ProductCard = (props) => {
       alt="Lazy Loaded Image"
     /></div>
             <div>
-            <div className="product-title">{props.title}</div>
+            <div className="product-title">{props?.title?.slice(0,20)}</div>
             <p>₹ {props.price}</p>
             </div>
         </div></Link>

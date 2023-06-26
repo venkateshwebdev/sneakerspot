@@ -45,7 +45,7 @@ const About = () => {
             </div>
             <div>
                 <div className="about-head ">Trending</div>
-                <div className="about-trending about-prod" >
+                <div className="about-trending about-prod about-gal" >
                 {
                     data?.data.trend.map((e,i)=><ProductCard key={i} home={true} id={e._id} price={e.price} image={e.images?.[1]?e.images[1]:e.images?.[0]}/>)
                 }

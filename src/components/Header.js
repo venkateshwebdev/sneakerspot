@@ -1,14 +1,17 @@
 import Aos from "aos";
 import { useContext,useState,useEffect } from "react";
-import {GiHamburgerMenu} from "react-icons/gi"
+import {GiCaptainHatProfile, GiHamburgerMenu} from "react-icons/gi"
 import "aos/dist/aos.css"
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem,removeItem } from "../store/cartSlice";
+import UserContext from "../context/userContext";
+import {CgProfile } from "react-icons/cg";
 const Navbar = () => {
     const [width, setWidth] = useState(false);
     const [scrollY, setScrollY] = useState(0);
     const count = useSelector(state => state.cart.productList)
+    const {user,setUser} = useContext(UserContext)
     useEffect(() => {
         const handleScroll = () => {
           const currentScrollY = window.scrollY;
@@ -26,6 +29,9 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
       }, []);
       // console.log(count)
+      useEffect(()=>{
+        setUser(localStorage.getItem("user"))
+      },[])
     return(
         <div className={`navbar-container`}>
             {
@@ -38,7 +44,7 @@ const Navbar = () => {
                 <Link to="/">Home</Link>
                 <Link to="shop">Shop</Link>
                 <Link className="cart" to="cart">Cart {count.length}</Link>
-                <Link  to="login">Login</Link>
+                {user?<Link to="/account" className="user"><CgProfile />{user}</Link>:<Link  to="login">Login</Link>}
                 </div>
 
             </div>
@@ -47,6 +53,7 @@ const Navbar = () => {
                 <div className="navbar-logo logo" onClick={()=>setWidth(false)}>SS</div>
             </div>
             }
+            
         </div>
     );
 }
