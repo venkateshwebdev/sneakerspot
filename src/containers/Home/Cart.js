@@ -29,7 +29,7 @@ const CartProduct = (props)=>{
         <Link to={`/product/${item?.data._id}`}><div className="cart-content">
                 <img src={item?.data?.images?.[1]} alt={"image"} />
                 <div>{item?.data.title.slice(0,25)}</div>
-                <p style={{color:"gray"}}>from {item?.data._id}</p>
+                <p style={{color:"gray"}}>from {item?.data.brand}</p>
                 </div></Link>
             <div style={{display:"flex",alignItems:"center",gap:"20px"}}>
                 <p>₹ {item?.data.price}</p>

@@ -66,8 +66,10 @@ const Login = () => {
                 <h1 className="login-title">{login?"Login":"Register"}</h1>
                 <div>{sucess}</div>
                 <form onSubmit={login?handleLogin:handleRegister}>
-                    <input type="text" onChange={(e)=>setEmail(e.target.value)} placeholder="Enter Email" value={email}/>
-                    <input type="password" onChange={(e)=>setPassword(e.target.value)} placeholder={login?"Enter Your Password":"Set a Password"} value={password}/>
+                    <label>Email</label>
+                    <input type="text" onChange={(e)=>setEmail(e.target.value)} placeholder="example@123.com" value={email}/>
+                    <label>Password</label>
+                    <input type="password" onChange={(e)=>setPassword(e.target.value)} placeholder={login?"password":"Set a Password"} value={password}/>
                     {!login&&<input type="text" placeholder="Confirm Password"/>}
                     {/* <input type="file" /> */}
                     <button>{login?"SignIn":"SignUp"}</button>

@@ -237,9 +237,10 @@ button{
   align-items: center;
   justify-content: space-between;
   height: 100px;
-  padding: 0 10%;
+  padding: 2% 10%;
   width: 80%;
   border-radius: 20px;
+  border-bottom: 2px dashed rgba(128, 128, 128, 0.289);
 }
 .cart-product:hover{
   background-color: rgba(211, 211, 211, 0.279);
@@ -362,19 +363,60 @@ button{
   justify-content: center;
   width: 90%;
   padding: 0 5%;
+  height: 100vh;
 }
 .product-page-main{
   display: flex;
+  width: 100%;
   align-items: center;
-  justify-content: space-between;
-  height: 100vh;
+  justify-content: center;
+}
+.product-page-image{
+  margin: 5%;
+  display: flex;
+  width: 50%;
+  /* overflow-x: scroll; */
+  /* object-fit: contain; */
+  flex-direction: column;
+}
+.size-button{
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  gap: 10px;
+}
+.size-button > button{
+  /* border-radius: 10px; */
+  padding: 1% 2%;
+  border: 2px solid;
 }
 .product-page-image > img{
-  height: 100%;
-  width: 100%;
+  aspect-ratio: 3/2;
+  object-fit: contain;
+  height: 80%;
+  width: 80%;
+  mix-blend-mode: color-burn;
 }
 .product-page-content{
+  width: 50%;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-evenly; */
+  gap: 30px;
+  height: 100%;
+}
+.product-buttons{
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  gap: 30px;
+}
+.product-buttons > button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .account-container{
@@ -655,9 +697,13 @@ button{
   font-size: 16px;
 }
 .cart-product{
-  flex-direction: column;
+  /* flex-direction: column; */
   border: 1px solid gray;
   height: 130px;
+  font-size: 12px;
+}
+.cart-content >p{
+  display: none;
 }
 .cart-product:hover{
   background-color: rgba(211, 211, 211, 0.279);
@@ -680,6 +726,18 @@ button{
   border: 3px solid;
   font-size: 18px;
   padding: 5px;
+}
+.product-page-content{
+  /* align-items: center; */
+  width: 90%;
+  margin: 0 5%;
+}
+.product-page-image > img{
+  aspect-ratio: 2/2;
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+  mix-blend-mode: color-burn;
 }
 
 }

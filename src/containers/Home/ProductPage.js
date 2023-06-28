@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { addItem,removeItem } from "../../store/cartSlice";
+import { AiOutlineHeart } from "react-icons/ai";
 const Product = () => {
     const [data,setData] = useState()
     const [butttontog,setButttontog] = useState(true)
@@ -33,14 +34,15 @@ const Product = () => {
                 <div className="product-page-image"><img src={data?.data?.images?.[1]} /></div>
                 <div className="product-page-content">
                     <h1>{data?.data.title}</h1>
-                    <h3>{data?.data.price}</h3>
-                    <p>{data?.data.details}</p>
-                    <p>{data?.data.descripition}</p>
-                    <div><button onClick={changeCart}>{butttontog?"Add to Cart":"Item Added !"}</button></div>
+                    <h3>₹ {data?.data.price}</h3>
+                    <div className="size-button">{[...Array(6)].map((e,i)=><button>{i+5}</button>)}</div>
+                    <div className="product-buttons"><button onClick={changeCart}>{butttontog?"Add to Cart":"Item Added !"}</button><button><AiOutlineHeart/> wishlist</button></div>
                     </div>
             </div>
-            <div className="product-page-extra">
-            </div>
+            {/* <div className="product-page-extra">
+            <p>{data?.data.details}</p>
+                    <p>{data?.data.descripition}</p>
+            </div> */}
         </div>
     );
 }
