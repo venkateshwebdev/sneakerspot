@@ -1,7 +1,12 @@
-import React, { Suspense, useContext } from "react";
+import Aos from "aos";
+import React, { Suspense, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
+import "aos/dist/aos.css"
 const Home = () => {
     const About = React.lazy(()=>import('./About'))
+    useEffect(()=>{
+        Aos.init({duration:1000,easing:"ease-in-out"})
+    })
     return (
         <>
         <div className="home-container">
@@ -11,7 +16,7 @@ const Home = () => {
                 <div className="home-button"><button><Link to={"/shop"}>Shop Our Styles</Link></button></div>
                 </div>
 
-            <div className="home-hero"><img src="https://static.nike.com/a/images/t_default/459c2382-d340-4a62-ba7e-f7532256ebe7/jordan-why-not-6-pf-shoes-WvTHFW.png"/></div>
+            <div className="home-hero"><img data-aos="fade-up" src="https://static.nike.com/a/images/t_default/459c2382-d340-4a62-ba7e-f7532256ebe7/jordan-why-not-6-pf-shoes-WvTHFW.png"/></div>
         </div>
         <Suspense fallback={<div>Loading...</div>}>
             <About />

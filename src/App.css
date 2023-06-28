@@ -5,6 +5,7 @@ font-family: 'Poppins', sans-serif; */
 .App {
   text-align: center;
   font-family: 'Poppins', sans-serif;
+  overflow: hidden;
 }
 .App-logo {
   height: 40vmin;
@@ -151,11 +152,12 @@ button{
 .about-trending{
   display: flex;
   gap: 2%;
-  padding-top: 5%;
+  padding: 5%;
 }
-.about-gal{
+/* .about-gal{
   overflow-x: scroll;
-}
+} */
+
 .about-head{
   font-size: 24px;
   font-weight: 900;
@@ -668,6 +670,7 @@ button{
   gap: 2%;
   padding-top: 5%;
   overflow-x: scroll;
+  overflow-y: hidden;
 }
 .about-prod{
   display: grid;
